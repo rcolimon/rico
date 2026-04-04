@@ -4,6 +4,7 @@ Most AI systems assume they still have a valid basis to act.
 
 RiCo exists for the moment that assumption breaks.
 
+---
 
 ## The Problem
 
@@ -23,6 +24,7 @@ This leads to:
 - Local correctness, global inconsistency  
 - Delayed or non-defensible failure  
 
+---
 
 ## What RiCo Is
 
@@ -33,11 +35,15 @@ It does not explain outcomes after the fact.  
 
 It determines whether execution should proceed at all.
 
+---
 
 ## Core Principle
 
 When a system can no longer reliably establish the basis for action, execution is no longer admissible.
 
+RiCo treats loss of evaluability as a constraint on execution — not a condition to adapt through.
+
+---
 
 ## Key Concepts
 
@@ -56,6 +62,7 @@ Degraded conditions are not adapted to — they constrain execution.
 **Non-carryability**  
 When a decision path can no longer be reliably continued.
 
+---
 
 ## Example
 
@@ -67,6 +74,7 @@ Decision: ESCALATE
 Mode: CONSTRAINED ADMISSIBILITY
 Reason: multi-source inconsistency
 
+---
 
 ## Why It Matters
 
@@ -82,6 +90,7 @@ RiCo:
 - Prevents invalid action  
 - Enforces admissibility before continuation  
 
+---
 
 ## Positioning
 
@@ -95,10 +104,13 @@ It integrates with:
 - Decision systems  
 - Governance frameworks  
 
+---
 
 ## Status
 
 Early conceptual framework  
 Prototype in development  
+
+Focus: high-stakes and high-uncertainty environments
 
 Focus: high-stakes and high-uncertainty environments
