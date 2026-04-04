@@ -45,6 +45,44 @@ RiCo treats loss of evaluability as a constraint on execution — not a conditio
 
 ---
 
+## Execution Flow
+
+INPUT → VALIDATE → EVALUATE → DECIDE → EXECUTE / CONSTRAIN
+
+1. INPUT  
+   Action request enters the system  
+
+2. VALIDATE  
+   Authority and policy checks  
+
+3. EVALUATE  
+   Are conditions still reliable? (Evaluability)
+
+4. DECIDE  
+   Is execution admissible under current conditions?
+
+5. OUTCOME  
+   - EXECUTE → proceed normally  
+   - CONSTRAIN → escalate, defer, or terminate  
+
+---
+
+## Decision Modes
+
+RiCo does not treat execution as binary (allow / deny).
+
+It operates across modes:
+
+- **Admissible** → execution proceeds  
+- **Constrained Admissibility** → execution limited or escalated  
+- **Non-admissible** → execution does not proceed  
+
+Mode is determined by evaluability and confidence thresholds.
+
+RiCo does not manage outcomes — it governs whether outcomes are allowed to be produced at all.
+
+---
+
 ## Key Concepts
 
 **Evaluability**  
