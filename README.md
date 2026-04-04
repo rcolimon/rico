@@ -79,7 +79,7 @@ It operates across modes:
 
 Mode is determined by evaluability and confidence thresholds.
 
-RiCo does not manage outcomes — it governs whether outcomes are allowed to be produced at all.
+﻿RiCo treats loss of evaluability as a constraint on execution — not a condition to adapt.
 
 ---
 
@@ -148,7 +148,5 @@ It integrates with:
 
 Early conceptual framework  
 Prototype in development  
-
-Focus: high-stakes and high-uncertainty environments
 
 Focus: high-stakes and high-uncertainty environments
