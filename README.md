@@ -95,7 +95,7 @@ It operates across modes:
 - **Constrained Admissibility** → execution limited or escalated  
 - **Non-admissible** → execution does not proceed  
 
-Mode is determined by evaluability and confidence thresholds.
+Mode is determined by evaluability and confidence thresholds tied to execution rights.
 
 ﻿RiCo treats loss of evaluability as a constraint on execution — not a condition to adapt.
 
