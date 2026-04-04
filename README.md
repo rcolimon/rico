@@ -85,6 +85,24 @@ Mode is determined by evaluability and confidence thresholds.
 
 ## Key Concepts
 
+## System Diagram
+
+```
+Action Request
+      ↓
+[ Validation ]
+      ↓
+[ Evaluability Check ]
+      ↓
+Is execution admissible?
+     /        \
+   Yes        No
+    ↓          ↓
+Execute     Constrain
+              ↓
+(Escalate / Defer / Terminate)
+```
+
 **Evaluability**  
 The system’s ability to reliably determine whether its conditions still hold.
 
