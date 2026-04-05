@@ -52,17 +52,16 @@ Before and during execution, it evaluates:
 
 ---
 
-## Execution Boundary
+﻿## Execution Boundary
 
-[ Input Signals ]
+﻿ [ Input Signals ]
 ↓
 [ Evaluability Check ]
 ↓
 [ Execution Boundary ]
 ↓
-┌───────────────┬───────────────┬───────────────┬───────────────┐
-│   Continue    │   Constrain   │   Escalate    │   Terminate   │
-└───────────────┴───────────────┴───────────────┴───────────────┘
+
+Continue     Constrain     Escalate     Terminate
 
 ---
 
