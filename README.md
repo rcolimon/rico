@@ -25,9 +25,9 @@ That the system still has a valid basis to act.
 
 In live environments, that assumption breaks.
 
-Signals drift
-State desynchronizes
-Context degrades
+Signals drift.
+State desynchronizes.
+Context degrades.
 
 
 And yet execution continues.
@@ -61,6 +61,21 @@ held
 escalated
 refused
 
+## Quick Example
+
+Input:
+{
+  "action": "execute_trade",
+  "confidence": 0.42,
+  "state_consistency": "degraded"
+}
+
+Output:
+{
+  "status": "BLOCK",
+  "reason": "Evaluability degraded",
+  "mode": "CONSTRAINED_ADMISSIBILITY"
+}
 
 
 Core Principle
