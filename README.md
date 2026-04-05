@@ -1,4 +1,5 @@
- ## RiCo — Runtime Integrity Control
+
+ ## RiCo — Runtime Integrity Control
 
 > Execution should not proceed unless it remains valid to do so.
 
@@ -124,7 +125,8 @@ RiCo addresses this directly at runtime.
   }
 }
 
-## Respond
+
+Respond
 
 {
   "status": "TERMINATE",
@@ -133,7 +135,7 @@ RiCo addresses this directly at runtime.
 }
 
 
-## Status
+Status
 
 Early-stage infrastructure.
 
