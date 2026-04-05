@@ -63,14 +63,17 @@ refused
 
 ## Quick Example
 
-Input:
+﻿ Request:
 {
   "action": "execute_trade",
-  "confidence": 0.42,
-  "state_consistency": "degraded"
+  "context": {
+    "confidence": 0.42,
+    "state": "inconsistent",
+    "authority": "partial"
+  }
 }
 
-Output:
+Response:
 {
   "status": "BLOCK",
   "reason": "Evaluability degraded",
