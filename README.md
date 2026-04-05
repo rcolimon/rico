@@ -1,4 +1,4 @@
- # RiCo — Runtime Integrity Control
+ ## RiCo — Runtime Integrity Control
 
 > Execution should not proceed unless it remains valid to do so.
 
