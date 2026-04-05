@@ -51,8 +51,7 @@ Before and during execution, it evaluates:
 - **Consistency** — do signals and state still align  
 
 ---
-
-﻿## Execution Boundary
+# ﻿## Execution Boundary
 
 ﻿ [ Input Signals ]
 ↓
