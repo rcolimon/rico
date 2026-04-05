@@ -1,171 +1,120 @@
-# RiCo
+RiCo — Execution Governance Layer
 
-Most AI systems assume they still have a valid basis to act.
 
-RiCo exists for the moment that assumption breaks.
+RiCo (Runtime Integrity Control) is an execution governance layer for AI and autonomous systems.
 
----
+It sits between decision and execution and determines whether an action is still valid under current system conditions.
 
-## The Problem
+If that basis cannot be established, execution does not proceed.
 
-AI systems are designed to continue operating under changing conditions.
 
-In practice, those conditions degrade:
 
-- Signals become inconsistent  
-- Context becomes unstable  
-- Authority becomes unclear  
 
-Yet execution continues.
+Why RiCo
 
-This leads to:
 
-- Silent drift  
-- Local correctness, global inconsistency  
-- Delayed or non-defensible failure  
+Most systems validate decisions before execution.
 
----
+They check intent.
+They check safety.
+They check policy.
 
-## What RiCo Is
+But they assume something critical:
 
-RiCo is a runtime control layer that governs whether execution remains admissible under current conditions.
+That the system still has a valid basis to act.
 
-It does not optimize decisions.  
-It does not explain outcomes after the fact.  
+In live environments, that assumption breaks.
 
-It determines whether execution should proceed at all.
+Signals drift
+State desynchronizes
+Context degrades
 
----
 
-## Core Principle
+And yet execution continues.
 
-When a system can no longer reliably establish the basis for action, execution is no longer admissible.
+This is where failure accumulates.
 
-RiCo treats loss of evaluability as a constraint on execution — not a condition to adapt through.
+Not because decisions are wrong —
+but because execution continues without a valid foundation.
 
----
 
-## Execution Flow
 
-INPUT → VALIDATE → EVALUATE → DECIDE → EXECUTE / CONSTRAIN
 
-1. INPUT  
-   Action request enters the system  
+What RiCo Does
 
-2. VALIDATE  
-   Authority and policy checks  
 
-3. EVALUATE  
-   Are conditions still reliable? (Evaluability)
+RiCo enforces execution legitimacy at runtime.
 
-4. DECIDE  
-   Is execution admissible under current conditions?
+Before any action proceeds, RiCo evaluates:
 
-5. OUTCOME  
-   - EXECUTE → proceed normally  
-   - CONSTRAIN → escalate, defer, or terminate  
+current system state
+signal integrity
+authority validity
+evaluability threshold
 
----
 
-## System Diagram
+Based on that, execution is:
 
-```
-Action Request
-      ↓
-[ Validation ]
-      ↓
-[ Evaluability Check ]
-      ↓
-Is execution admissible?
-     /        \
-   Yes        No
-    ↓          ↓
-Execute     Constrain
-              ↓
-(Escalate / Defer / Terminate)
-```
+allowed
+constrained
+held
+escalated
+refused
 
-## Decision Modes
 
-RiCo does not treat execution as binary (allow / deny).
 
-It operates across modes:
+Core Principle
 
-- **Admissible** → execution proceeds  
-- **Constrained Admissibility** → execution limited or escalated  
-- **Non-admissible** → execution does not proceed  
 
-Mode is determined by evaluability and confidence thresholds tied to execution rights.
+Execution is not assumed.
 
-﻿RiCo treats loss of evaluability as a constraint on execution — not a condition to adapt.
+It is justified — or it does not proceed.
 
----
+Example
 
-## Key Concepts
+POST /rico/evaluate
 
+{
+  "action": "execute_trade",
+  "context": {
+    "confidence": 0.42,
+    "state": "inconsistent",
+    "authority": "partial"
+  }
 
-**Evaluability**  
-The system’s ability to reliably determine whether its conditions still hold.
+}
 
-**Admissibility**  
-Whether execution is justified under current conditions.
+Response
+﻿ {
+  "status": "BLOCK",
+  "reason": "Evaluability degraded",
+  "mode": "CONSTRAINED_ADMISSIBILITY"
+}
 
-**Execution Boundary**  
-The point at which execution is allowed or constrained.
+Execution Boundary
 
-**Constraint over Adaptation**  
-Degraded conditions are not adapted to — they constrain execution.
 
-**Non-carryability**  
-When a decision path can no longer be reliably continued.
+RiCo introduces a runtime boundary:
 
----
+If the system can no longer reliably determine
+whether conditions still hold,
 
-## Example
+execution is no longer admissible.
 
-[RiCo] Execution boundary engaged
-Evaluability: DEGRADED
-Confidence: 0.41
 
-Decision: ESCALATE
-Mode: CONSTRAINED ADMISSIBILITY
-Reason: multi-source inconsistency
+Positioning
 
----
 
-## Why It Matters
+RiCo does not guide decisions.
 
-Most systems:
+It governs whether execution remains valid.
 
-- Continue under degraded conditions  
-- Attempt to adapt or recover  
-- Validate after execution  
 
-RiCo:
+Status
 
-- Governs execution at runtime  
-- Prevents invalid action  
-- Enforces admissibility before continuation  
+Early-stage infrastructure.
 
----
+Focused on defining execution governance
+for AI systems operating under real-world conditions.
 
-## Positioning
-
-RiCo is not a replacement for existing systems.
-
-It operates as a control layer above them.
-
-It integrates with:
-
-- AI models  
-- Decision systems  
-- Governance frameworks  
-
----
-
-## Status
-
-Early conceptual framework  
-Prototype in development  
-
-Focus: high-stakes and high-uncertainty environments
+﻿ 
