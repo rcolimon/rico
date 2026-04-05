@@ -28,6 +28,27 @@ Yet execution continues.
 
 ---
 
+# Where Most Systems Break
+
+
+Most systems include some form of validation before execution.
+
+They check alignment, confidence, and policy constraints at the moment an action begins.
+
+But once execution is in motion, those conditions are typically assumed to remain valid.
+
+In practice, they don’t.
+
+Signals drift. Context changes. The basis for evaluation can degrade while the system continues operating.
+
+As a result, failure doesn’t usually occur at the start of execution.
+
+It emerges at the point of continuation —
+when the system proceeds without revalidating whether the original conditions still hold.
+
+RiCo addresses this by treating evaluability not as a one-time check, but as a runtime boundary.
+
+
 ## What follows is not failure — it’s drift
 
 - locally correct actions  
