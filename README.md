@@ -1,65 +1,71 @@
-# RiCo — Runtime Integrity Control
+ # RiCo — Runtime Integrity Control
 
-Execution should not proceed unless it remains valid to do so.
+> Execution should not proceed unless it remains valid to do so.
 
-RiCo is a runtime control framework that determines whether execution still has a valid basis to continue under real-world conditions.
+RiCo is a runtime control framework that determines whether execution still has a **valid basis to continue** under real-world conditions.
 
+---
 
-
-# The Problem
-
+## The Problem
 
 Most systems are built to execute reliably.
 
 They assume:
 
-inputs remain trustworthy
-state remains consistent
-authority remains valid
-
+- inputs remain trustworthy  
+- state remains consistent  
+- authority remains valid  
 
 In practice, these conditions degrade.
 
-signals become unreliable
-system state diverges
-authority becomes unclear
-context fragments
-
+- signals become unreliable  
+- system state diverges  
+- authority becomes unclear  
+- context fragments  
 
 Yet execution continues.
 
+---
 
-# What follows is not failure — it’s drift
+## What follows is not failure — it’s drift
 
-
-locally correct actions
-globally inconsistent outcomes
-delayed failure accumulation
-
+- locally correct actions  
+- globally inconsistent outcomes  
+- delayed failure accumulation  
 
 The issue is not instability.
 
-It is the loss of the ability to determine whether execution remains justified.
+> It is the loss of the ability to determine whether execution remains justified.
 
+---
 
+## What RiCo Does
 
-# What RiCo Does
-
-
-RiCo introduces a runtime execution boundary.
+RiCo introduces a **runtime execution boundary**.
 
 Before and during execution, it evaluates:
 
-Evaluability → can correctness still be determined
-Authority → is action still permitted
-Consistency → do signals and state still align
+- **Evaluability** — can correctness still be determined  
+- **Authority** — is action still permitted  
+- **Consistency** — do signals and state still align  
 
+---
 
+## Execution Boundary
 
+[ Input Signals ]
+↓
+[ Evaluability Check ]
+↓
+[ Execution Boundary ]
+↓
+┌───────────────┬───────────────┬───────────────┬───────────────┐
+│   Continue    │   Constrain   │   Escalate    │   Terminate   │
+└───────────────┴───────────────┴───────────────┴───────────────┘
 
+---
 
-# Execution Boundary Behavior
-
+## Execution Boundary Behavior
 
 When conditions degrade:
 
@@ -69,47 +75,46 @@ RiCo intervenes.
 
 Execution is:
 
-continued (if valid)
-constrained (if partially valid)
-escalated (if uncertain)
-terminated (if no longer justifiable)
+- **Continue** — if conditions remain valid  
+- **Constrain** — if partially valid  
+- **Escalate** — if evaluability is uncertain  
+- **Terminate** — if execution is no longer justifiable  
 
+---
 
+## System Structure
 
-# System Structure
+- Execution Gate  
+- Authority Bridge  
+- Policy Engine  
+- Evaluability Layer  
+- Governance Ledger  
 
+---
 
-- Execution Gate
-- Authority Bridge
-- Policy Engine
-- Evaluability Layer
-- Governance Ledger
-
-
-
-# Core Principle
-
+## Core Principle
 
 RiCo does not optimize execution.
 
-It governs whether execution should continue at all.
+> It governs whether execution should continue at all.
 
+---
 
-
-# Why This Matters
-
+## Why This Matters
 
 As systems become more autonomous, the primary risk shifts:
 
-Not incorrect execution —
-but continuing execution without a valid basis.
+Not incorrect execution —  
+but **continuing execution without a valid basis**.
 
 RiCo addresses this directly at runtime.
 
+---
 
 ## Quick Example
 
-﻿ Request:
+**Request**
+```json
 {
   "action": "execute_trade",
   "context": {
@@ -119,68 +124,18 @@ RiCo addresses this directly at runtime.
   }
 }
 
-Response:
+## Respond
+
 {
-  "status": "BLOCK",
+  "status": "TERMINATE",
   "reason": "Evaluability degraded",
   "mode": "CONSTRAINED_ADMISSIBILITY"
 }
 
 
-Core Principle
-
-
-Execution is never assumed.
-
-It is justified — or it does not proceed.
-
-# API Example
-
-POST /rico/evaluate
-
-Request:
-{
-  "action": "execute_trade",
-  "context": {
-    "confidence": 0.42,
-    "state": "inconsistent",
-    "authority": "partial"
-  }
-}
-
-Response:
-{
-  "status": "BLOCK",
-  "reason": "Evaluability degraded",
-  "mode": "CONSTRAINED_ADMISSIBILITY"
-}
-
-# Decision Modes
-
-- ALLOW — execution proceeds
-- CONSTRAIN — execution allowed with restrictions
-- HOLD — execution paused pending clarification
-- ESCALATE — requires external intervention
-- BLOCK — execution not admissible
-
-
-# RiCo introduces a runtime boundary:
-
-If the system can no longer reliably determine
-whether conditions still hold,
-
-execution is no longer admissible.
-
-RiCo does not guide decisions.
-
-It governs whether execution remains valid.
-
-
-# Status
+## Status
 
 Early-stage infrastructure.
 
-Focused on defining execution governance
-for AI systems operating under real-world conditions.
 
-﻿ 
+Focused on defining execution governance for AI systems operating under real-world conditions.
