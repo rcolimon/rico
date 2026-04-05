@@ -85,10 +85,11 @@ Execution is not assumed.
 
 It is justified — or it does not proceed.
 
-Example
+## API Example
 
 POST /rico/evaluate
 
+Request:
 {
   "action": "execute_trade",
   "context": {
@@ -96,15 +97,22 @@ POST /rico/evaluate
     "state": "inconsistent",
     "authority": "partial"
   }
-
 }
 
-Response
-﻿ {
+Response:
+{
   "status": "BLOCK",
   "reason": "Evaluability degraded",
   "mode": "CONSTRAINED_ADMISSIBILITY"
 }
+
+## Decision Modes
+
+- ALLOW — execution proceeds
+- CONSTRAIN — execution allowed with restrictions
+- HOLD — execution paused pending clarification
+- ESCALATE — requires external intervention
+- BLOCK — execution not admissible
 
 Execution Boundary
 
