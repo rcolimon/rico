@@ -46,8 +46,6 @@ As a result, failure doesn’t usually occur at the start of execution.
 It emerges at the point of continuation —
 when the system proceeds without revalidating whether the original conditions still hold.
 
-RiCo addresses this by treating evaluability not as a one-time check, but as a runtime boundary.
-
 
 ## What follows is not failure — it’s drift
 
