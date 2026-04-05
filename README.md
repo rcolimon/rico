@@ -84,7 +84,7 @@ Response:
 Core Principle
 
 
-Execution is not assumed.
+Execution is never assumed.
 
 It is justified — or it does not proceed.
 
