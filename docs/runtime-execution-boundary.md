@@ -1,79 +1,81 @@
 # Runtime Execution Boundary (REB)
 
-## Definition
-
-The Runtime Execution Boundary (REB) is the point where execution is continuously evaluated before consequential continuation.
-
-REB asks one question:
-
-> Does execution still have a valid basis to continue?
-
----
-
 ## Purpose
 
-REB exists to prevent systems from continuing only because execution remains technically possible.
+The Runtime Execution Boundary (REB) defines the point at which system execution transitions from observation into consequential action.
 
-A system may continue operating while the basis for continued action has degraded.
+Its purpose is not to determine whether execution is technically possible.
 
-REB governs that boundary.
-
----
-
-## What REB Evaluates
-
-REB evaluates:
-
-- Evaluability — can correctness still be determined?
-- Authority — is execution still authorized?
-- Context — do present conditions remain admissible?
-- Consistency — do signals and system state still align?
-- Consequence — does continued execution remain justified?
+Its purpose is to determine whether execution remains admissible under current runtime conditions.
 
 ---
 
-## REB Outcomes
+## Principle
 
-REB may produce four outcomes:
+Execution capability is not execution authority.
 
-- Continue
-- Constrain
-- Escalate
-- Terminate
+A system may retain the ability to execute while no longer possessing a valid basis to continue.
 
-Execution continues only while legitimacy remains demonstrable under present conditions.
+The Runtime Execution Boundary continuously evaluates whether execution remains legitimate as runtime conditions evolve.
 
 ---
 
-## Boundary Separation
+## Runtime Evaluation
 
-REB preserves separation between:
+The Runtime Execution Boundary considers factors including:
 
-- Observation
-- Evaluation
-- Governance
-- Execution
+- Current execution context
+- Authority state
+- Runtime integrity
+- Policy validity
+- Observation consistency
+- Resource constraints
+- Environmental changes
+- Human governance requirements
 
-Observation may inform governance.
-
-Observation does not become governance.
-
-Visibility is not permission.
-
-PASS is not authorization.
-
-UNKNOWN remains HOLD.
+These factors are evaluated continuously rather than only during initial authorization.
 
 ---
 
-## Why REB Matters
+## Separation of Responsibilities
 
-As AI systems become more autonomous, governance cannot remain only a pre-deployment checkpoint.
+The Runtime Execution Boundary does not:
 
-Governance must operate at runtime.
+- Generate observations
+- Produce AI outputs
+- Interpret model internals
+- Grant permanent authority
 
-REB makes runtime governance explicit.
+Instead, it determines whether execution remains admissible based upon current runtime state.
 
 ---
 
-**Humans First. Continuity Always. Architecture Must Survive.**
+## Architectural Role
+
+Within RiCo, the Runtime Execution Boundary separates:
+
+Observation
+
+↓
+
+Evaluation
+
+↓
+
+Governance
+
+↓
+
+Admissible Execution
+
+This separation preserves architectural independence while allowing continuous runtime governance.
+
+---
+
+## Guiding Principle
+
+A system may continue executing.
+
+That does not mean execution should continue.
+
+The Runtime Execution Boundary exists to determine whether execution still possesses a valid basis to proceed.
