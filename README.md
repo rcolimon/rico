@@ -3,11 +3,11 @@
 
 > **Humans First. Continuity Always. Architecture Must Survive.**
 
-RiCo (**Runtime Integrity Control**) is the governance layer for runtime execution integrity. It determines whether execution still has a **valid basis to continue** as authority, context, system state, and consequence evolve.
+RiCo (**Runtime Integrity Control**) is a governance-layer architecture for runtime execution integrity. It defines how a system should determine whether execution still has a **valid basis to continue** as authority, context, system state, and consequence evolve.
 
 RiCo does not optimize execution.
 
-RiCo governs whether execution remains **admissible**.
+RiCo specifies how continued legitimacy should be checked after execution activation.
 
 ---
 
@@ -29,7 +29,7 @@ During execution:
 
 Execution may remain operational while no longer remaining justified.
 
-RiCo addresses this runtime governance problem.
+RiCo is an architecture for addressing this runtime governance problem.
 
 ---
 
@@ -47,57 +47,51 @@ That distinction separates operational continuity from runtime legitimacy.
 
 ---
 
-# Runtime Execution Boundary (REB)
+# Relationship to the Execution Boundary
 
-RiCo implements a **Runtime Execution Boundary (REB)**.
+ManChine's public description of the governance stack assigns distinct responsibilities: RGE-01 evaluates admissibility before activation; REB-01 governs whether consequential execution may begin; RiCo-01 addresses runtime integrity and legitimacy continuity after activation.
 
-Before and during execution it continuously evaluates:
+The RiCo-01 continuity design asks whether continued execution remains justified as conditions change. Its public description highlights ongoing checks of:
 
-- **Evaluability** — Can correctness still be determined?
-- **Authority** — Is execution still authorized?
-- **Context** — Do present conditions remain admissible?
-- **Consistency** — Do system signals and state still align?
-- **Consequence** — Does continued execution remain justified?
+- **Authority** — Does present authority still cover continued action?
+- **Evidence** — Is supporting evidence still current and reliable?
+- **Context and policy** — Do current conditions and constraints still support execution?
+- **Provenance and human oversight** — Can the basis for continuation be attributed and escalated when needed?
 
 ---
 
-# Runtime Decisions
+# When Conditions Change
 
-The Runtime Execution Boundary produces one of four outcomes:
+Where required conditions fail or can no longer be evaluated, the RiCo-01 design calls for a bounded response such as suspension, restriction, escalation, or stopping execution. A prior approval alone does not justify continued execution after its supporting conditions change.
 
-- ✅ Continue
-- ⚠️ Constrain
-- 📣 Escalate
-- ⛔ Terminate
-
-Execution continues only while legitimacy remains demonstrable under present conditions.
+Under this design, execution should continue only while its basis remains demonstrable under present conditions.
 
 ---
 
 # What RiCo Is
 
-RiCo is governance-layer software for:
+The RiCo architecture is intended to support:
 
 - Runtime Integrity
 - Execution Continuity
 - Consequential Governance
-- Runtime Admissibility
+- Legitimacy Continuity
 - Human Oversight
 
-RiCo complements existing AI systems without replacing their internal models or decision logic.
+RiCo is designed to complement existing AI systems without replacing their internal models or decision logic.
 
 ---
 
 # Architecture
 
-RiCo maintains explicit separation between:
+The architecture separates:
 
 - Observation
 - Evaluation
 - Governance
 - Execution
 
-The Runtime Execution Boundary remains implementation-neutral, allowing different observation systems, policy engines, and execution environments to interoperate through a stable governance boundary.
+The architecture is intended to remain implementation-neutral so that different observation systems, policy engines, and execution environments could interoperate through its defined interfaces. This is a design goal, not a claim of demonstrated interoperability with every system.
 
 ---
 
@@ -113,15 +107,13 @@ Execution must remain continuously legitimate—not simply continuously operatio
 
 # Status
 
-Early-stage architectural framework.
-
-Focused on runtime governance for autonomous and AI-enabled systems operating under real-world conditions.
+Early-stage public architecture focused on runtime governance for autonomous and AI-enabled systems operating under real-world conditions. This repository includes design documents, examples, interfaces, and runtime scenarios. Their presence does not by itself establish reference-implementation readiness or a deployed enforcement system; specific implementation and interoperability claims require separately reviewed evidence.
 
 ---
 
 ## ManChine AI Technology
 
-Governance-layer software for AI runtime integrity, continuity, and consequential governance.
+Architecture for AI runtime integrity, continuity, and consequential governance.
 
 ---
 
