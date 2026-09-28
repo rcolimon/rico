@@ -2,17 +2,21 @@
 
 ## Vision
 
-RiCo (Runtime Integrity Control) provides a governance layer for evaluating whether execution remains admissible as runtime conditions evolve.
+RiCo (Runtime Integrity Control) is an architecture for checking whether continued execution remains justified as runtime conditions evolve after activation.
 
 Our long-term objective is to enable trustworthy runtime governance for increasingly autonomous AI systems.
+
+This roadmap describes public architectural and implementation goals. A completed architecture milestone does not by itself establish a ready reference implementation or a deployed enforcement system. In ManChine's public governance description, RGE-01 evaluates admissibility, REB-01 governs activation, and RiCo-01 addresses continuity after activation.
 
 ---
 
 # Phase 1 — Architecture Foundation ✅
 
-- Runtime Integrity Control (RiCo)
-- Runtime Execution Boundary (REB)
-- CARE/REB architecture
+The completed items below are restated to clarify responsibility under ManChine's public RGE-01 / REB-01 / RiCo-01 split. This is a wording correction, not a new completion claim.
+
+- RiCo-01 continuity responsibility described
+- RGE-01 evaluation and REB-01 activation relationship described
+- CARE/REB architectural concepts documented
 - Core terminology established
 - Repository published
 - Runtime scenarios documented
@@ -33,10 +37,12 @@ Our long-term objective is to enable trustworthy runtime governance for increasi
 # Phase 3 — Reference Implementation
 
 - Runtime governance engine
-- REB evaluation pipeline
+- Continuity revalidation after REB-01 admission
 - Event validation framework
-- Execution admissibility API
+- Runtime integrity and continuation interface
 - Reference SDK
+
+Earlier roadmap wording also listed a REB evaluation pipeline and execution admissibility API in this phase. Those are outside RiCo-01's post-activation continuity scope. Their status in RGE-01 or REB-01 work is not established by this roadmap.
 
 ---
 
